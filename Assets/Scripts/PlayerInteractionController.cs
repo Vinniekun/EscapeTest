@@ -24,6 +24,7 @@ public class PlayerInteractionController : MonoBehaviour
         {
             currentInteractable = hit.collider.GetComponent<Interactable>();
             interactableObject = hit.collider.gameObject;
+            //Debug.Log(interactableObject);
         }
         else
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public void OnInteraction()
+    public virtual void OnInteraction()
     {
         Debug.Log("Usou o objeto ");
     }
