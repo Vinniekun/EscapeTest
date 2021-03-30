@@ -11,6 +11,7 @@ public class Wood : Interactable
         transform.position = new Vector3(0f, -20f, 0);
         subtitle.SetText("Um pedaço de madeira? Parece que posso usar em algum lugar da casa.");
         StartCoroutine(UpdateText());
+        Inventory.Instance.AddItem("Wood");
         StartCoroutine(RemoveAfterSeconds(6));
     }
 }

@@ -11,6 +11,7 @@ public class BatteryItem : Interactable
         transform.position = new Vector3(0f, -20f, 0);
         subtitle.SetText("Uma bateria. Posso usa em algo que precise de energia.");
         StartCoroutine(UpdateText());
+        Inventory.Instance.AddItem("Battery");
         StartCoroutine(RemoveAfterSeconds(6f));
 
     }

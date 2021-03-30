@@ -15,6 +15,7 @@ public class Glasses : Interactable
         transform.position = new Vector3(0f, -20f, 0);
         subtitle.SetText("Aqui está o meu óculos, agora posso enxergar melhor.");
         StartCoroutine(UpdateText());
+        Inventory.Instance.AddItem("Vision Glasses");
         ClearImage();
         StartCoroutine(RemoveAfterSeconds(6));
 

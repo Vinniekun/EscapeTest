@@ -12,6 +12,7 @@ public class KeyBedRoom : Interactable
         transform.position = new Vector3(0f, -20f, 0);
         subtitle.SetText("Uma chave... parece utíl, vou guardá-la");
         StartCoroutine(UpdateText());
+        Inventory.Instance.AddItem("Bedroom Key");
         StartCoroutine(RemoveAfterSeconds(6f));
 
     }
