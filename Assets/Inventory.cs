@@ -20,6 +20,15 @@ public class Inventory : MonoBehaviour
         items.text += item + "\n";
     }
 
+    public void RemoveItem(string item)
+    {
+        inventory.Remove(item);
+        items.text = "";
+        foreach (var it in inventory)
+        {
+            items.text += it + "\n";
+        }
+    }
     private void Awake()
     {
         if(Instance == null)

@@ -6,18 +6,21 @@ public class BedroomDoor : Interactable
 {
     public Animator anim;
     public BoxCollider bc;
-    private bool opened = false;
+    public bool opened = false;
 
     public override void OnInteraction()
     {
         base.OnInteraction();
 
-        if (!opened)
-        {
-            bc.enabled = false;
-            anim.Play("BedroomDoorOpen");
-            opened = true;
+        if (!opened) {
+            if (Inventory.Instance.inventory.Contains("Bedroom Key"))
+            {
+                bc.enabled = false;
+                anim.Play("BedroomDoorOpen");
+                opened = true;
+            }
         }
+        
         
 
     }

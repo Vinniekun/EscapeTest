@@ -1,24 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.PostProcessing;
 
-public class Glasses : Interactable
+public class Switch : Interactable
 {
-
-    public Volume v;
 
     public override void OnInteraction()
     {
         base.OnInteraction();
         transform.position = new Vector3(0f, -20f, 0f);
-        subtitle.SetText("Aqui está o meu óculos, agora posso enxergar melhor.");
+        subtitle.SetText("Uma maçaneta de chuveiro. Devo coloca-la no banheiro?");
         StartCoroutine(UpdateText());
-        Inventory.Instance.AddItem("Vision Glasses");
-        ClearImage();
-        StartCoroutine(RemoveAfterSeconds(6));
-
+        Inventory.Instance.AddItem("Shower Switch");
+        StartCoroutine(RemoveAfterSeconds(6f));
     }
 
     public override IEnumerator RemoveAfterSeconds(float time)
@@ -29,12 +23,6 @@ public class Glasses : Interactable
     public override IEnumerator UpdateText()
     {
         return base.UpdateText();
-    }
-
-    public void ClearImage()
-    {
-        v.profile.components[0].active = false;
-
     }
 
 }
