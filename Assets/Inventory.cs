@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance;
     [SerializeField] public List<string> inventory;
     public TMP_Text items;
+    public bool bathroomPuzzle = false;
+    public bool tvPuzzle = false;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class Inventory : MonoBehaviour
     {
         if(Instance == null)
         {
+            DontDestroyOnLoad(transform.gameObject);
             Instance = this;
         }
     }

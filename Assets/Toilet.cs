@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Toilet : Interactable
 {
-    public bool startedToiletPuzzle = false;
+    public static bool startedToiletPuzzle = false;
     public bool toiletPuzzleComplete = false;
     public bool toiletPuzzleDone = false;
 
