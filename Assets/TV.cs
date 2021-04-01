@@ -12,7 +12,7 @@ public class TV : Interactable
     {
         base.OnInteraction();
 
-        if (!controller)
+        if (!Inventory.Instance.inventory.Contains("Remote Control"))
         {
             subtitle.SetText("Talvez essa TV seja util, porém não tem nenhum botão\npara trocar de canal nela.");
             StartCoroutine(UpdateText());
@@ -22,7 +22,9 @@ public class TV : Interactable
             if (!Inventory.Instance.tvPuzzle)
             {
                 Cursor.lockState = CursorLockMode.None;
-                SceneManager.LoadScene("TVPuzzle");
+                Inventory.Instance.ChangeScene(false);
+                Inventory.Instance.player.SetActive(false);
+                SceneManager.LoadScene("TVPuzzle", LoadSceneMode.Additive);
             }
             else
             {

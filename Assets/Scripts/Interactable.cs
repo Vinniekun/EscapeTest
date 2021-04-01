@@ -14,10 +14,18 @@ public class Interactable : MonoBehaviour
         
     }
 
+    public virtual IEnumerator UpdateText(float time)
+    {
+        textArea.SetActive(true);
+        yield return new WaitForSecondsRealtime(time);
+        textArea.SetActive(false);
+        subtitle.SetText("");
+    }
+
     public virtual IEnumerator UpdateText()
     {
         textArea.SetActive(true);
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(5f);
         textArea.SetActive(false);
         subtitle.SetText("");
     }

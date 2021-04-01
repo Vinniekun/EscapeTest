@@ -31,8 +31,9 @@ public class TvPuzzle : MonoBehaviour {
         linePipe.Clear();
         curvePipe.Clear();
         Cursor.lockState = CursorLockMode.Locked;
-        //SceneManager.LoadScene("Demo");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Inventory.Instance.ChangeScene(true);
+        Inventory.Instance.player.SetActive(true);
+        SceneManager.UnloadSceneAsync("TVPuzzle");
     }
 
     private void GetAllPipesRotations()
@@ -116,6 +117,8 @@ public class TvPuzzle : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Inventory.Instance.tvPuzzle = true;
         yield return new WaitForSecondsRealtime(3f);
-        SceneManager.LoadScene("Demo");
+        Inventory.Instance.ChangeScene(true);
+        Inventory.Instance.player.SetActive(true);
+        SceneManager.UnloadSceneAsync("TVPuzzle");
     }
 }

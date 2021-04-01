@@ -10,6 +10,10 @@ public class Inventory : MonoBehaviour
     public TMP_Text items;
     public bool bathroomPuzzle = false;
     public bool tvPuzzle = false;
+    public bool toiletPuzzle = false;
+    public bool toiletFinishing = false;
+    public GameObject sceneObjects;
+    public GameObject player;
 
     void Start()
     {
@@ -39,4 +43,10 @@ public class Inventory : MonoBehaviour
             Instance = this;
         }
     }
+
+    public void ChangeScene(bool change)
+    {
+        sceneObjects.SetActive(change);
+    }
+
 }

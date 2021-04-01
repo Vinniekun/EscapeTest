@@ -9,6 +9,12 @@ public class Glasses : Interactable
 
     public Volume v;
 
+    private void Start()
+    {
+        subtitle.SetText("Tenho sair de casa, mas antes preciso encontrar meus óculos.\n");
+        StartCoroutine(UpdateText(10f));
+    }
+
     public override void OnInteraction()
     {
         base.OnInteraction();

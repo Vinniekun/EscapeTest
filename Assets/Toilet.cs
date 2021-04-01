@@ -5,29 +5,33 @@ using UnityEngine;
 public class Toilet : Interactable
 {
     public static bool startedToiletPuzzle = false;
-    public bool toiletPuzzleComplete = false;
-    public bool toiletPuzzleDone = false;
 
     public override void OnInteraction()
     {
         base.OnInteraction();
 
-        if (!startedToiletPuzzle)
+        if (!Inventory.Instance.tvPuzzle)
         {
             subtitle.SetText("Tento dar a descarga mas parece não funcionar.");
             StartCoroutine(UpdateText());
         }
         else
         {
-            if (!toiletPuzzleComplete)
+            if (Inventory.Instance.tvPuzzle)
             {
                 subtitle.SetText("Dei a descarga e nada aconteceu.\nParece que tem uma pista na TV...");
                 StartCoroutine(UpdateText());
             }
-            else
+            if(Inventory.Instance.toiletPuzzle)
             {
-                subtitle.SetText("Já resolvi este quebra-cabeça.\n");
+                subtitle.SetText("Já resolvi este quebra-cabeça. Agora a casa\npossui água. O que posso fazer com água?");
                 StartCoroutine(UpdateText());
+            }
+            else if (Inventory.Instance.toiletFinishing)
+            {
+                subtitle.SetText("O botão funcionou! Consigo ouvir o barulho de água\npela casa agora, o que posso fazer com água?");
+                StartCoroutine(UpdateText());
+                Inventory.Instance.toiletPuzzle = true;
             }
         }
 
