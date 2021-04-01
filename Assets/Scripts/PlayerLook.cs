@@ -17,7 +17,7 @@ public class PlayerLook : MonoBehaviour
     void Start()
     {
         xRotation = 0f;
-        mouseSensitivity = 900f;
+        mouseSensitivity = 500f;
         //Lock mouse
         Cursor.lockState = CursorLockMode.Locked;
     }
