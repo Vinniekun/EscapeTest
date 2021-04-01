@@ -117,6 +117,7 @@ public class TvPuzzle : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Inventory.Instance.tvPuzzle = true;
         yield return new WaitForSecondsRealtime(3f);
+        Inventory.Instance.UpdateTv();
         Inventory.Instance.ChangeScene(true);
         Inventory.Instance.player.SetActive(true);
         SceneManager.UnloadSceneAsync("TVPuzzle");

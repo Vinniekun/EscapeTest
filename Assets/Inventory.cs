@@ -14,6 +14,8 @@ public class Inventory : MonoBehaviour
     public bool toiletFinishing = false;
     public GameObject sceneObjects;
     public GameObject player;
+    public GameObject tv;
+    public Material tvClue;
 
     void Start()
     {
@@ -47,6 +49,11 @@ public class Inventory : MonoBehaviour
     public void ChangeScene(bool change)
     {
         sceneObjects.SetActive(change);
+    }
+
+    public void UpdateTv()
+    {
+        tv.GetComponent<MeshRenderer>().material = tvClue;
     }
 
 }
